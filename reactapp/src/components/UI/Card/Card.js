@@ -16,6 +16,9 @@ const Card = ({key,
             }
             setSate(true);
         }
+        const handleAnswers =()=>{
+            <Answer {count}></Answer>
+        }
 
 
         return (
@@ -27,7 +30,7 @@ const Card = ({key,
             <Button onClick={()=>disableBtn(options.option2)} disabled = {state} >{options.option2}</Button>
             <Button onClick={()=>disableBtn(options.option3)} disabled = {state} >{options.option3}</Button>
             <Button onClick={()=>disableBtn(options.option4)} disabled = {state} >{options.option4}</Button>
-            {(key===5 && state==='true')?<Button></Button>:""}
+            {(key===5 && state==='true')?<Button onClick={handleAnswers}>Show Results</Button>:""}
             </div>
         )
     }
