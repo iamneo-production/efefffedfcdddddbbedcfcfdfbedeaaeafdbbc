@@ -13,7 +13,7 @@ function App() {
   const questionData = [
     {
       key:1,
-      question:'Who is the father of the nation ?',
+      question:'Who are the father of the nation ?',
       //correctAnswerMarkUpdate,
       //attempt,
       options : {
@@ -26,7 +26,7 @@ function App() {
     },
     {
       key : 2,
-      question : "What color is are the leaves ?",
+      question : "What colors is are the leaves ?",
       //correctAnswerMarkUpdate,
       //attempt,
       options : {
@@ -39,7 +39,7 @@ function App() {
     },
     {
       key:3,
-      question:'Who is the father of the nation ?',
+      question:'Who is the fathers of the nation ?',
       //correctAnswerMarkUpdate,
       //attempt,
       options : {
@@ -52,7 +52,7 @@ function App() {
     },
     {
       key:4,
-      question:'Who is the father of the nation ?',
+      question:'Who is the fathers of the nation ?',
       //correctAnswerMarkUpdate,
       //attempt,
       options : {
