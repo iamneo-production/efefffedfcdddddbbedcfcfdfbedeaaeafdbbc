@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
+import Answer from '../Answer/Answer';
 let count=0;
 const Card = ({key,
     question,
@@ -17,7 +18,7 @@ const Card = ({key,
             setSate(true);
         }
         const handleAnswers =()=>{
-            <Answer {count}></Answer>
+            <Answer>{count}</Answer>
         }
 
 
@@ -30,7 +31,7 @@ const Card = ({key,
             <Button onClick={()=>disableBtn(options.option2)} disabled = {state} >{options.option2}</Button>
             <Button onClick={()=>disableBtn(options.option3)} disabled = {state} >{options.option3}</Button>
             <Button onClick={()=>disableBtn(options.option4)} disabled = {state} >{options.option4}</Button>
-            {(key===5 && state==='true')?<Button onClick={handleAnswers}>Show Results</Button>:""}
+            {(key===5 && state===true)?<Button onClick={handleAnswers}>Show Results</Button>:""}
             </div>
         )
     }
