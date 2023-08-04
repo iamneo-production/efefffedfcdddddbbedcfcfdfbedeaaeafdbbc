@@ -4,8 +4,6 @@ import Answer from '../Answer/Answer';
 let count=0;
 const Card = ({key,
     question,
-    correctAnswerMarkUpdate,
-    attempt,
     options,
     answer}) => {
         const [state, setSate] = useState(false);
