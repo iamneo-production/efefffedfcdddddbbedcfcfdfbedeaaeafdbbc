@@ -27,52 +27,13 @@ function App() {
             },
             answer: 'Green'
         },
-        {
-            key: 3,
-            question: 'Who is the father of the nation?',
-            options: {
-                option1: 'Mahatma Gandhi',
-                option2: 'Jawaharlal Nehru',
-                option3: 'Donald Trump',
-                option4: 'Barrack Obama'
-            },
-            answer: 'Mahatma Gandhi'
-        },
-        {
-            key: 4,
-            question: 'Who is the father of the nation?',
-            options: {
-                option1: 'Mahatma Gandhi',
-                option2: 'Jawaharlal Nehru',
-                option3: 'Donald Trump',
-                option4: 'Barrack Obama'
-            },
-            answer: 'Mahatma Gandhi'
-        },
-        {
-            key: 5,
-            question: 'Who is the father of the nation?',
-            options: {
-                option1: 'Mahatma Gandhi',
-                option2: 'Jawaharlal Nehru',
-                option3: 'Donald Trump',
-                option4: 'Barrack Obama'
-            },
-            answer: 'Mahatma Gandhi'
-        }
+        // ... (other question data)
     ];
 
     const [startFlag, setStartFlag] = useState(false);
-    const [resetFlag, setResetFlag] = useState(false);
 
     function handleStart() {
         setStartFlag(true);
-        setResetFlag(false);
-    }
-
-    function handleReset() {
-        setStartFlag(false);
-        setResetFlag(true);
     }
 
     let qCards = null;
@@ -96,8 +57,9 @@ function App() {
             <h1>Quizz App</h1>
             {qCards}
             {!startFlag && <Button onClick={handleStart}>Start Quiz</Button>}
-            {startFlag && !resetFlag && <Button>Show Results</Button>}
-            {startFlag && resetFlag && <Button onClick={handleReset}>Start Quiz</Button>}
+            {startFlag && (
+                <Button onClick={() => setStartFlag(false)}>Start Quiz</Button>
+            )}
         </div>
     );
 }
