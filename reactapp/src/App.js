@@ -31,25 +31,31 @@ function App() {
     ];
 
     const [startFlag, setStartFlag] = useState(false);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
 
     function handleStart() {
         setStartFlag(true);
     }
 
+    function handleNextQuestion() {
+        setCurrentQuestion((prevQuestion) => prevQuestion + 1);
+    }
+
+    function handleReset() {
+        setStartFlag(false);
+        setCurrentQuestion(0);
+    }
+
     let qCards = null;
     if (startFlag) {
-        qCards = questionData.map((data) => (
+        const currentData = questionData[currentQuestion];
+        qCards = (
             <Card
-                key={data.key}
-                question={data.question}
-                options={{
-                    option1: data.options.option1,
-                    option2: data.options.option2,
-                    option3: data.options.option3,
-                    option4: data.options.option4,
-                }}
+                key={currentData.key}
+                question={currentData.question}
+                options={currentData.options}
             ></Card>
-        ));
+        );
     }
 
     return (
@@ -57,8 +63,11 @@ function App() {
             <h1>Quizz App</h1>
             {qCards}
             {!startFlag && <Button onClick={handleStart}>Start Quiz</Button>}
-            {startFlag && (
-                <Button onClick={() => setStartFlag(false)}>Start Quiz</Button>
+            {startFlag && currentQuestion < questionData.length - 1 && (
+                <Button onClick={handleNextQuestion}>Next Question</Button>
+            )}
+            {startFlag && currentQuestion === questionData.length - 1 && (
+                <Button onClick={handleReset}>Show Results</Button>
             )}
         </div>
     );
