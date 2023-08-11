@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
-let count=0;
+//let count=0;
 const Card = ({key,
     question,
     correctAnswerMarkUpdate,
